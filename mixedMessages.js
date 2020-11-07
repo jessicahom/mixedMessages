@@ -6,10 +6,10 @@ let message = '';
 
 const pieces = {
     greetings: [
-        'Good morning!',
-        'Good afternoon!',
-        'Good evening!',
-        'Hello!'
+        'Good morning! ',
+        'Good afternoon! ',
+        'Good evening! ',
+        'Hello! '
     ],
     questions: [
         'How are you?',
@@ -33,10 +33,14 @@ function addGreeting (hour) {
     }
 }
 
+function addQuestion () {
+    message += pieces.questions[Math.floor(Math.random() * pieces.questions.length)]
+}
 
 const d = new Date();
 const h = d.getHours();
 
 addGreeting(h);
+addQuestion();
 
 console.log(message);
