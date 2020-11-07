@@ -16,6 +16,9 @@ function addGreeting (hour) {
     }
 }
 
-addGreeting(0);
+const d = new Date();
+const h = d.getHours();
+
+addGreeting(h);
 
 console.log(message);
