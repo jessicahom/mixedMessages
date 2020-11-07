@@ -12,12 +12,19 @@ const pieces = {
         'Hello! '
     ],
     questions: [
-        'How are you?',
-        'How is it going?',
-        'How do you feel?',
-        "What's up?",
-        "What's new?",
-        "How's it hanging?"
+        'How are you? ',
+        'How is it going? ',
+        'How do you feel? ',
+        "What's up? ",
+        "What's new? ",
+        "How's it hanging? "
+    ],
+    encouragement: [
+        "You're just great.",
+        "I think you're wonderful.",
+        "You are capable and kind.",
+        "I'm so glad to see you.",
+        "I hope good things happen to you."
     ]
 }
 
@@ -34,7 +41,11 @@ function addGreeting (hour) {
 }
 
 function addQuestion () {
-    message += pieces.questions[Math.floor(Math.random() * pieces.questions.length)]
+    message += pieces.questions[Math.floor(Math.random() * pieces.questions.length)];
+}
+
+function addEncouragement () {
+    message += pieces.encouragement[Math.floor(Math.random() * pieces.encouragement.length)];
 }
 
 const d = new Date();
@@ -42,5 +53,6 @@ const h = d.getHours();
 
 addGreeting(h);
 addQuestion();
+addEncouragement();
 
 console.log(message);
