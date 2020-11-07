@@ -4,17 +4,35 @@
 
 let message = '';
 
+const pieces = {
+    greetings: [
+        'Good morning!',
+        'Good afternoon!',
+        'Good evening!',
+        'Hello!'
+    ],
+    questions: [
+        'How are you?',
+        'How is it going?',
+        'How do you feel?',
+        "What's up?",
+        "What's new?",
+        "How's it hanging?"
+    ]
+}
+
 function addGreeting (hour) {
     if (hour >= 5 && hour <= 12) {
-        message += 'Good morning!';
+        message += pieces.greetings[0];
     } else if (hour > 12 && hour <= 17) {
-        message += 'Good afternoon!';
+        message += pieces.greetings[1];
     } else if (hour > 17 && hour <= 23) {
-        message += 'Good evening!';
+        message += pieces.greetings[2];
     } else {
-        message += 'Hello!';
+        message += pieces.greetings[3];
     }
 }
+
 
 const d = new Date();
 const h = d.getHours();
